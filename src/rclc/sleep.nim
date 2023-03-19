@@ -15,21 +15,21 @@
 ##  limitations under the License.
 
 import
-  ./visibility_control, ./visibility_control, ./visibility_control
+  ./visibility_control
 
-##
-##   Waits for milliseconds.
-##
-##   * <hr>
-##  Attribute          | Adherence
-##  ------------------ | -------------
-##  Allocates Memory   | No
-##  Thread-Safe        | No
-##  Uses Atomics       | No
-##  Lock-Free          | Yes
-##
-##  \param[in] ms milliseconds to wait
-##
 
-## !!!Ignored construct:  __attribute__ ( ( visibility ( default ) ) ) void rclc_sleep_ms ( unsigned int ms ) ;
-## Error: identifier expected, but got: ) (pxParRi)!!!
+proc rclc_sleep_ms*(ms: cuint) {.importc: "rclc_sleep_ms", header: "rcl/sleep.h".}
+  ##
+                              ##
+                              ##   Waits for milliseconds.
+                              ##
+                              ##   * <hr>
+                              ##  Attribute          | Adherence
+                              ##  ------------------ | -------------
+                              ##  Allocates Memory   | No
+                              ##  Thread-Safe        | No
+                              ##  Uses Atomics       | No
+                              ##  Lock-Free          | Yes
+                              ##
+                              ##  \param[in] ms milliseconds to wait
+                              ## 
