@@ -7,9 +7,6 @@
 
 #pragma c2nim mergeblocks
 #pragma c2nim stdints
-#pragma c2nim cppSkipCallOp
-#pragma c2nim cppSkipConverter
-#pragma c2nim cppskipconverter
 
 #pragma c2nim render extraNewLines
 #pragma c2nim render reIndentLongComments
