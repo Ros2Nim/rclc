@@ -1,0 +1,38 @@
+import ants/language_v1
+import cimporter/configs
+
+antExport ImporterConfig:
+  cimports:list:
+    - ImportConfig:
+      name: "rclc"
+      sources: "deps/rclc/rclc/include"
+      headerPrefix: "rcl/"
+      globs: ["**/*.h"]
+      includes: [
+        "deps/rcutils/include",
+        "deps/rmw/rmw/include",
+        "deps/rcl/rcl/include",
+        "deps/rosidl/rosidl_runtime_c/include",
+        "deps/rosidl/rosidl_typesupport_interface/include",
+        "deps/rcl/rcl_action/include",
+        "deps/rcl/rcl_lifecycle/include",
+        "deps/rcl/rcl_yaml_param_parser/include",
+        ]
+      # defines: []
+      # skipFiles: []
+      # renameFiles:list:
+      #   - Replace:
+      #     pattern: peg"^'string.' .+"
+      #     repl: "rstring$1"
+      # sourceMods:list:
+      #   - CSrcMods:
+      #     fileMatch: peg"'context.h'"
+      #     substitutes:list:
+      #       - Replace:
+      #         pattern: peg"'_Alignas(8)'"
+      #         repl: ""
+      # c2nimCfgs:list:
+      #   - C2NimCfg:
+      #     rawNims: str"""
+      #       discard "test"
+      #       """
