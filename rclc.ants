@@ -9,6 +9,11 @@ antExport ImporterConfig:
       headerPrefix: "rcl/"
       globs: ["**/*.h"]
       includes: [
+        "/opt/ros/humble/include/unique_identifier_msgs",
+        "/opt/ros/humble/include/action_msgs",
+        "/opt/ros/humble/include/builtin_interfaces",
+        "deps/include",
+        "deps/rclc/rclc/include",
         "deps/rcutils/include",
         "deps/rmw/rmw/include",
         "deps/rcl/rcl/include",
