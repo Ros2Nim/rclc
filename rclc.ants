@@ -29,13 +29,12 @@ antExport ImporterConfig:
       #   - Replace:
       #     pattern: peg"^'string.' .+"
       #     repl: "rstring$1"
-      # sourceMods:list:
-      #   - CSrcMods:
-      #     fileMatch: peg"'context.h'"
-      #     substitutes:list:
-      #       - Replace:
-      #         pattern: peg"'_Alignas(8)'"
-      #         repl: ""
+      sourceMods:list:
+        - CSrcMods:
+          fileMatch: peg"'action_goal_handle.h'"
+          deletes:list:
+            - LineDelete:
+              match: peg"'DECLARE_GOAL_HANDLE_POOL'"
       # c2nimCfgs:list:
       #   - C2NimCfg:
       #     rawNims: str"""
