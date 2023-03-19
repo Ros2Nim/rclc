@@ -4,6 +4,7 @@
 #pragma c2nim mergeDuplicates
 #pragma c2nim skipFuncDefines
 #pragma c2nim reorderTypes
+#pragma c2nim anonymousAsFields
 
 #pragma c2nim mergeblocks
 #pragma c2nim stdints

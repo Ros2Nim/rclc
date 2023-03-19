@@ -105,40 +105,20 @@ type
 
   rclc_gc_callback_t* = proc ()
 
-  INNER_C_UNION_executor_handle.h_4* {.importc: "rclc_executor_handle_t::no_name",
-                                       header: "rcl/executor_handle.h", bycopy,
-                                       union.} = object
-    subscription* {.importc: "subscription".}: ptr rcl_subscription_t
-    timer* {.importc: "timer".}: ptr rcl_timer_t
-    client* {.importc: "client".}: ptr rcl_client_t
-    service* {.importc: "service".}: ptr rcl_service_t
-    gc* {.importc: "gc".}: ptr rcl_guard_condition_t
-    action_client* {.importc: "action_client".}: ptr rclc_action_client_t
-    action_server* {.importc: "action_server".}: ptr rclc_action_server_t
-
-
-  INNER_C_UNION_executor_handle.h_6* {.importc: "rclc_executor_handle_t::no_name",
-                                       header: "rcl/executor_handle.h", bycopy,
-                                       union.} = object
-    subscription_callback* {.importc: "subscription_callback".}: rclc_subscription_callback_t
-    subscription_callback_with_context* {.
-        importc: "subscription_callback_with_context".}: rclc_subscription_callback_with_context_t
-    service_callback* {.importc: "service_callback".}: rclc_service_callback_t
-    service_callback_with_reqid* {.importc: "service_callback_with_reqid".}: rclc_service_callback_with_request_id_t
-    service_callback_with_context* {.importc: "service_callback_with_context".}: rclc_service_callback_with_context_t
-    client_callback* {.importc: "client_callback".}: rclc_client_callback_t
-    client_callback_with_reqid* {.importc: "client_callback_with_reqid".}: rclc_client_callback_with_request_id_t
-    gc_callback* {.importc: "gc_callback".}: rclc_gc_callback_t
-
-
   rclc_executor_handle_t* {.importc: "rclc_executor_handle_t",
                             header: "rcl/executor_handle.h", bycopy.} = object
     `type`* {.importc: "type".}: rclc_executor_handle_type_t ##
                               ##  Type of handle
     invocation* {.importc: "invocation".}: rclc_executor_handle_invocation_t ##
                               ##  Invocation type determines when to execute the callback
-    ano_executor_handle.h_5* {.importc: "ano_executor_handle.h_5".}: INNER_C_UNION_executor_handle.h_4 ##
+    anon3_subscription* {.importc: "subscription".}: ptr rcl_subscription_t ##
                               ##  Pointer to the handle
+    anon3_timer* {.importc: "timer".}: ptr rcl_timer_t
+    anon3_client* {.importc: "client".}: ptr rcl_client_t
+    anon3_service* {.importc: "service".}: ptr rcl_service_t
+    anon3_gc* {.importc: "gc".}: ptr rcl_guard_condition_t
+    anon3_action_client* {.importc: "action_client".}: ptr rclc_action_client_t
+    anon3_action_server* {.importc: "action_server".}: ptr rclc_action_server_t
     data* {.importc: "data".}: pointer
     req_id* {.importc: "req_id".}: rmw_request_id_t ##
                               ##  request-id only for type service/client request/response
@@ -154,8 +134,17 @@ type
     ##    void * response_msg
     ##    rmw_request_id_t req_id;
     ## } rclc_service_data_type_t
-    ano_executor_handle.h_7* {.importc: "ano_executor_handle.h_7".}: INNER_C_UNION_executor_handle.h_6 ##
+    anon4_subscription_callback* {.importc: "subscription_callback".}: rclc_subscription_callback_t ##
                               ##  Storage for callbacks
+    anon4_subscription_callback_with_context*
+        {.importc: "subscription_callback_with_context".}: rclc_subscription_callback_with_context_t
+    anon4_service_callback* {.importc: "service_callback".}: rclc_service_callback_t
+    anon4_service_callback_with_reqid* {.importc: "service_callback_with_reqid".}: rclc_service_callback_with_request_id_t
+    anon4_service_callback_with_context* {.
+        importc: "service_callback_with_context".}: rclc_service_callback_with_context_t
+    anon4_client_callback* {.importc: "client_callback".}: rclc_client_callback_t
+    anon4_client_callback_with_reqid* {.importc: "client_callback_with_reqid".}: rclc_client_callback_with_request_id_t
+    anon4_gc_callback* {.importc: "gc_callback".}: rclc_gc_callback_t
     index* {.importc: "index".}: csize_t
     initialized* {.importc: "initialized".}: _Bool ##
                               ##  Internal variable. Flag, which is true, if the handle is initialized and therefore initialized
