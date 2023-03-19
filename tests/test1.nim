@@ -8,5 +8,5 @@
 import unittest
 
 import rclc
-test "can add":
-  check add(5, 5) == 10
+export rclc
+
